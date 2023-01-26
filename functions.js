@@ -201,7 +201,12 @@ Output:
  */
 
 export function makeModelsStringWithReduce(arr) {
-    return '';
+    const mappedArr = arr.map((ar) => ar.model);
+    const reducedModels = mappedArr.reduce((acc, curr) => {
+        acc = acc + curr;
+        return acc;
+    }, '');
+    return reducedModels;
 }
 
 /*
