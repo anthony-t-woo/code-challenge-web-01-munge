@@ -201,12 +201,12 @@ Output:
  */
 
 export function makeModelsStringWithReduce(arr) {
-    const mappedArr = arr.map((ar) => ar.model);
-    const reducedModels = mappedArr.reduce((acc, curr) => {
-        acc = acc + curr;
-        return acc;
-    }, '');
-    return reducedModels;
+    return arr
+        .map((ar) => ar.model)
+        .reduce((acc, curr) => {
+            acc = acc + curr;
+            return acc;
+        }, '');
 }
 
 /*
@@ -216,7 +216,12 @@ Output: 14
  */
 
 export function getSumOfAges(arr) {
-    return 0;
+    return arr
+        .map((ar) => ar.age)
+        .reduce((acc, curr) => {
+            acc = acc + curr;
+            return acc;
+        }, 0);
 }
 
 /*
