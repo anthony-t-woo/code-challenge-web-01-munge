@@ -18,7 +18,7 @@ OUTPUT:
 ]*/
 
 export function getDogs(arr) {
-    return [];
+    return arr.filter((ar) => ar.type === 'dog');
 }
 
 /*
@@ -28,7 +28,7 @@ Output:
 */
 
 export function makeArrayOfNames(arr) {
-    return [];
+    return arr.map((ar) => ar.name);
 }
 
 /*
@@ -37,7 +37,7 @@ OUTPUT:
 */
 
 export function getNamesOfDogs(arr) {
-    return [];
+    return arr.filter((ar) => ar.type === 'dog').map((ar) => ar.name);
 }
 
 /*
@@ -47,7 +47,7 @@ Output:
 */
 
 export function makeReversedArrayOfTypes(arr) {
-    return [];
+    return arr.reverse().map((ar) => ar.type);
 }
 
 /*
@@ -62,7 +62,7 @@ Output:
 */
 
 export function makeSpanishLanguageArray(arr) {
-    return [];
+    return arr.map((ar) => ({ nombre: ar.name, tipo: ar.type }));
 }
 
 /*
@@ -76,7 +76,7 @@ Output:
 ]*/
 
 export function makeArrayWithIsHungry(arr) {
-     return []
+    return arr.map((ar) => ({ name: ar.name, isHungry: true, type: ar.type }));
 }
 
 /*
@@ -90,9 +90,8 @@ Output:
 ]*/
 
 export function makeShoutingArray(arr) {
-    return [];
+    return arr.map((ar) => ({ name: ar.name.toUpperCase(), type: ar.type }));
 }
-
 
 /*
 
@@ -101,7 +100,7 @@ Output:
 */
 
 export function makeStringArray(arr) {
-    return [];
+    return arr.map((ar) => ar.name + ar.type);
 }
 
 /*
@@ -114,7 +113,7 @@ OUTPUT:
 */
 
 export function findByName(name, arr) {
-    return {};
+    return arr.filter((ar) => ar.name === name).pop();
 }
 
 /*
@@ -140,7 +139,10 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+    return arr.map((ar) => [
+        ['name', ar.name],
+        ['type', ar.type],
+    ]);
 }
 
 ////////////////////////////////////////////////////////
@@ -169,7 +171,7 @@ Output:
 */
 
 export function getCars(arr) {
-    return [];
+    return arr.filter((ar) => ar.type === 'car');
 }
 
 /*
@@ -226,14 +228,12 @@ export function makeCountObject(arr) {
     return {};
 }
 
-
 /*
 
 Output: 
 (order doesn't matter--but the string must include all keys for the first object in the array)
 'typemakemodelage'
  */
-
 
 export function makeKeysString(arr) {
     return '';
