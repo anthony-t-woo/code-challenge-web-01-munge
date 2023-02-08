@@ -235,7 +235,11 @@ Output:
  */
 
 export function makeCountObject(arr) {
-    return {};
+    return arr
+        .map((ar) => ar.type)
+        .reduce(function (acc, curr) {
+            return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
+        }, {});
 }
 
 /*
@@ -246,5 +250,5 @@ Output:
  */
 
 export function makeKeysString(arr) {
-    return '';
+    return Object.keys(arr[1]).join('');
 }
